@@ -26,5 +26,18 @@
             android:text="Button"
             android:onClick="@{() -> viewmodel.firstProduct()}"/>
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.product.title}" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2秒ごと"
+            android:onClick="@{() -> viewmodel.dataAcquisitionEvery2Seconds()}"/>
+
     </LinearLayout>
 </layout>

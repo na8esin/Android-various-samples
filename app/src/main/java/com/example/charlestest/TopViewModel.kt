@@ -1,6 +1,7 @@
 package com.example.charlestest
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -11,6 +12,10 @@ class TopViewModel(
     private val retrofit: Retrofit
 ) : ViewModel() {
 
+    private var _product: MutableLiveData<Product> = MutableLiveData()
+    val product: MutableLiveData<Product>
+        get() = _product
+
     fun firstProduct() {
         viewModelScope.launch {
             try {
@@ -18,6 +23,23 @@ class TopViewModel(
                 Log.d("TopViewModel", product.toString())
             } catch (e: Exception) {
                 Log.e("TopViewModel", e.toString())
+            }
+        }
+    }
+
+    fun dataAcquisitionEvery2Seconds() {
+        viewModelScope.launch {
+            var i = 1
+            while (true) {
+                try {
+                    val service = retrofit.create(ProductService::class.java)
+                    _product.value = service.find(i).also { i++ }
+                    if (i > 30) i = 1
+                    Log.d("TopViewModel", "$i")
+                } catch (e: Exception) {
+                    Log.e("TopViewModel", e.toString())
+                }
+                kotlinx.coroutines.delay(2000)
             }
         }
     }

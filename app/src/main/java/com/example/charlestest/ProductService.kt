@@ -1,11 +1,15 @@
 package com.example.charlestest
 
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 
 interface ProductService {
     @GET("products/1")
     suspend fun first(): Product
+
+    @GET("products/{id}")
+    suspend fun find(@Path("id") id: Int): Product
 }
 
 data class Product(
