@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CharlesTest"
+rootProject.name = "Coroutines"
 include ':app'

@@ -39,5 +39,12 @@
             android:text="2秒ごと"
             android:onClick="@{() -> viewmodel.dataAcquisitionEvery2Seconds()}"/>
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2秒ごとのキャンセル"
+            android:onClick="@{() -> viewmodel.cancelDataAcquisitionEvery2Seconds()}"/>
+
     </LinearLayout>
 </layout>

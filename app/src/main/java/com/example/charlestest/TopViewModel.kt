@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 
@@ -15,6 +16,8 @@ class TopViewModel(
     private var _product: MutableLiveData<Product> = MutableLiveData()
     val product: MutableLiveData<Product>
         get() = _product
+
+    private var dataAcquisitionEvery2SecondsScope: Job? = null
 
     fun firstProduct() {
         viewModelScope.launch {
@@ -28,6 +31,7 @@ class TopViewModel(
     }
 
     fun dataAcquisitionEvery2Seconds() {
+        dataAcquisitionEvery2SecondsScope =
         viewModelScope.launch {
             var i = 1
             while (true) {
@@ -42,6 +46,10 @@ class TopViewModel(
                 kotlinx.coroutines.delay(2000)
             }
         }
+    }
+
+    fun cancelDataAcquisitionEvery2Seconds() {
+        dataAcquisitionEvery2SecondsScope?.cancel()
     }
 }
 
