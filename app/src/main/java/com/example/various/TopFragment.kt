@@ -1,4 +1,4 @@
-package com.example.charlestest
+package com.example.various
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.charlestest.databinding.FragmentTopBinding
+import com.example.various.databinding.FragmentTopBinding
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

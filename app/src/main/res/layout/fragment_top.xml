@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="viewmodel" type="com.example.charlestest.TopViewModel"/>
+        <variable name="viewmodel" type="com.example.various.TopViewModel"/>
     </data>
 
     <LinearLayout

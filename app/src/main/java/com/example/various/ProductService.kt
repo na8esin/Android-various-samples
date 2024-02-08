@@ -1,4 +1,4 @@
-package com.example.charlestest
+package com.example.various
 
 import retrofit2.http.GET
 import retrofit2.http.Path

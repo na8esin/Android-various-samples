@@ -1,4 +1,4 @@
-package com.example.charlestest
+package com.example.various
 
 import org.junit.Test
 
