@@ -28,6 +28,9 @@ class MenuFragment : Fragment() {
         binding.button5.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment_to_pagerFragment)
         }
+        binding.button6.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_oldPagerFragment)
+        }
         return binding.root
     }
 }

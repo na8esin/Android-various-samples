@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.various.R
+import com.example.various.databinding.FragmentOldPagerBinding
 
 class OldPagerFragment : Fragment() {
 
@@ -15,11 +16,17 @@ class OldPagerFragment : Fragment() {
     }
 
     private lateinit var viewModel: OldPagerViewModel
+    private lateinit var binding: FragmentOldPagerBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_old_pager, container, false)
+        binding = FragmentOldPagerBinding.inflate(inflater, container, false)
+        val adapter = MyFragmentPagerAdapter(childFragmentManager)
+        val pager = binding.viewPager
+        pager.adapter = adapter
+        binding.strip.setViewPager(pager)
+        return binding.root
     }
 }

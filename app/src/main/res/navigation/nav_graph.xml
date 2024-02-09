@@ -18,9 +18,16 @@
         <action
             android:id="@+id/action_menuFragment_to_pagerFragment"
             app:destination="@id/pagerFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_oldPagerFragment"
+            app:destination="@id/oldPagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/pagerFragment"
         android:name="com.example.various.pager2.PagerFragment"
         android:label="PagerFragment" />
+    <fragment
+        android:id="@+id/oldPagerFragment"
+        android:name="com.example.various.pager.OldPagerFragment"
+        android:label="OldPagerFragment" />
 </navigation>
