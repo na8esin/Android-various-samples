@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Coroutines"
+rootProject.name = "Various"
 include ':app'
