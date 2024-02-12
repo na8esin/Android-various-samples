@@ -32,4 +32,8 @@ class OldContentFragment : Fragment() {
         binding.testView.text = arguments?.getInt("position").toString()
         return binding.root
     }
+
+    fun initPlayer() {
+
+    }
 }

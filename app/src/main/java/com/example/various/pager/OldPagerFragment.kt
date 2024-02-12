@@ -26,6 +26,9 @@ class OldPagerFragment : Fragment() {
         val adapter = MyFragmentPagerAdapter(childFragmentManager)
         val pager = binding.viewPager
         pager.adapter = adapter
+
+        pager.setOnPageChangeListener(OnPageChangeListenerImpl(adapter))
+
         binding.strip.setViewPager(pager)
         return binding.root
     }
