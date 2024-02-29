@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.example.various.R
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
@@ -38,17 +39,22 @@ class AdidFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_adid, container, false)
+    }
 
-        // そのまま呼び出すと、
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // CoroutineScopeで囲わないで呼び出すと
         // Calling this from your main thread can lead to deadlock
         // が発生する
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
             val adInfo = AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
             Log.d("AdidFragment", "adInfo.id: ${adInfo.id}")
-        }
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adid, container, false)
+            view.findViewById<TextView>(R.id.textView).text = adInfo.id
+        }
     }
 
     companion object {
