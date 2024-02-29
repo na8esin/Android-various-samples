@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".overlap.Overlap2Fragment">
+
+    <!-- xml内で下に配置したものが上にくる -->
+    <RelativeLayout
+        android:id="@+id/inserted"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 画像は中央部にしか配置されてないが、match_parentなので全体を覆っている -->
+    <ImageView
+        android:id="@+id/overlap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/overlap">
+
+    </ImageView>
+
+</RelativeLayout>

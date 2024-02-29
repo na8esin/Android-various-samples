@@ -30,6 +30,9 @@ class TopViewModel(
         }
     }
 
+    /**
+     * 別のFragmentに移動すると、自動でキャンセルされる
+     */
     fun dataAcquisitionEvery2Seconds() {
         dataAcquisitionEvery2SecondsScope =
         viewModelScope.launch {

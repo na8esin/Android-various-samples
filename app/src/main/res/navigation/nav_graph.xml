@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/menuFragment">
 
@@ -21,6 +22,33 @@
         <action
             android:id="@+id/action_menuFragment_to_oldPagerFragment"
             app:destination="@id/oldPagerFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_overlapFragment"
+            app:destination="@id/overlapFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_overlap2Fragment"
+            app:destination="@id/overlap2Fragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_location2Fragment"
+            app:destination="@id/location2Fragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_imageViewFragment"
+            app:destination="@id/imageViewFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_viewBindFragment"
+            app:destination="@id/viewBindFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_exoPlayerFragment"
+            app:destination="@id/exoPlayerFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_fileFragment"
+            app:destination="@id/fileFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_adidFragment"
+            app:destination="@id/adidFragment" />
     </fragment>
     <fragment
         android:id="@+id/pagerFragment"
@@ -30,4 +58,45 @@
         android:id="@+id/oldPagerFragment"
         android:name="com.example.various.pager.OldPagerFragment"
         android:label="OldPagerFragment" />
+    <fragment
+        android:id="@+id/overlapFragment"
+        android:name="com.example.various.overlap.OverlapFragment"
+        android:label="OverlapFragment" />
+    <fragment
+        android:id="@+id/overlap2Fragment"
+        android:name="com.example.various.overlap.Overlap2Fragment"
+        android:label="fragment_overlap2"
+        tools:layout="@layout/fragment_overlap2" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.various.location.LocationFragment"
+        android:label="LocationFragment" />
+    <fragment
+        android:id="@+id/location2Fragment"
+        android:name="com.example.various.location.Location2Fragment"
+        android:label="Location2Fragment" />
+    <fragment
+        android:id="@+id/imageViewFragment"
+        android:name="com.example.various.image.ImageViewFragment"
+        android:label="fragment_image_view"
+        tools:layout="@layout/fragment_image_view" />
+    <fragment
+        android:id="@+id/viewBindFragment"
+        android:name="com.example.various.bind.ViewBindFragment"
+        android:label="fragment_view_bind"
+        tools:layout="@layout/fragment_view_bind" />
+    <fragment
+        android:id="@+id/exoPlayerFragment"
+        android:name="com.example.various.exoplayer2.ExoPlayerFragment"
+        android:label="ExoPlayerFragment" />
+    <fragment
+        android:id="@+id/fileFragment"
+        android:name="com.example.various.storage.FileFragment"
+        android:label="fragment_file"
+        tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/adidFragment"
+        android:name="com.example.various.adid.AdidFragment"
+        android:label="fragment_adid"
+        tools:layout="@layout/fragment_adid" />
 </navigation>

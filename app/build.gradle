@@ -32,6 +32,7 @@ android {
 
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
 
     compileOptions {
@@ -66,17 +67,24 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     def nav_version = "2.7.7"
-
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
-
     // Testing Navigation
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
 
-    // 古いライブラリ
+    // 位置情報
+    implementation 'com.google.android.gms:play-services-location:21.1.0'
+
+    // tab
     implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+
+    // exoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.16.1'
+    implementation "com.google.android.exoplayer:extension-ima:2.16.1"
+
+    // gms
+    implementation "com.google.android.gms:play-services-ads-identifier:18.0.1"
 }

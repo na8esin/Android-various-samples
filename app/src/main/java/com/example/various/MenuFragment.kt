@@ -31,6 +31,33 @@ class MenuFragment : Fragment() {
         binding.button6.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment_to_oldPagerFragment)
         }
+        binding.button7.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_overlapFragment)
+        }
+        binding.button8.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_overlap2Fragment)
+        }
+        binding.button9.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_locationFragment)
+        }
+        binding.button10.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_location2Fragment)
+        }
+        binding.button11.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_imageViewFragment)
+        }
+        binding.button12.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_viewBindFragment)
+        }
+        binding.button13.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_exoPlayerFragment)
+        }
+        binding.button14.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_fileFragment)
+        }
+        binding.button15.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_adidFragment)
+        }
         return binding.root
     }
 }

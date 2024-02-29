@@ -3,6 +3,10 @@ package com.example.various.pager
 import android.util.Log
 import androidx.viewpager.widget.ViewPager
 
+/**
+ * - 初期表示時はプレイヤーを起動しない
+ * - 放送があるチャンネルに移動させる
+ */
 class OnPageChangeListenerImpl(
     private val adapter: MyFragmentPagerAdapter
 ): ViewPager.OnPageChangeListener {
@@ -36,7 +40,18 @@ class OnPageChangeListenerImpl(
     override fun onPageScrollStateChanged(state: Int) {
         Log.d(
             "OnPageChangeListenerImpl",
-            "onPageScrollStateChanged: $state, currentPos: $currentPos, currentItem ${adapter.getItem(currentPos).arguments}")
+            "onPageScrollStateChanged: $state, " +
+                    "currentPos: $currentPos, " +
+                    "currentItem ${adapter.getItem(currentPos).arguments}")
 
+        /*
+         * ページングが完了した時にプレイヤーを初期化する
+         */
+        if (state == ViewPager.SCROLL_STATE_IDLE) {
+            // ここで、無理やり、adapter.getItemを呼び出してもonCreateView()が呼ばれないから意味ない
+            // さらに、このメソッドの後に、setPrimaryItem()が呼ばれるから、ここで、Fragmentのメソッドを呼び出すとズレる
+//            val f = adapter.currentFragment()
+//            f?.initPlayer()
+        }
     }
 }
