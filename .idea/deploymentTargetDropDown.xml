@@ -18,6 +18,18 @@
           <timeTargetWasSelectedWithDropDown value="2024-02-27T04:04:48.488633Z" />
         </State>
       </entry>
+      <entry key="calendarWithDateFormat()">
+        <State />
+      </entry>
+      <entry key="dateFormat()">
+        <State />
+      </entry>
+      <entry key="dateFormatWithContext()">
+        <State />
+      </entry>
+      <entry key="zonedDateTime()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

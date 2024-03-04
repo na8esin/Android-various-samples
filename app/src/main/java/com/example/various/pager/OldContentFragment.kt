@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.various.databinding.FragmentOldContentBinding
 
 class OldContentFragment : Fragment() {
@@ -35,6 +37,7 @@ class OldContentFragment : Fragment() {
         binding.testView.text = arguments?.getInt("position").toString()
         pagerData = PagerData(arguments?.getInt("position") ?: 0)
         Log.d("OldContentFragment", "pagerData: $pagerData")
+
         return binding.root
     }
 
@@ -58,6 +61,7 @@ class OldContentFragment : Fragment() {
         Log.d("OldContentFragment", "onPause: $arguments")
 
         releasePlayer()
+        // onPauseだと自動でキャンセルされない
         viewModel.cancelCountDownTimer()
     }
 
