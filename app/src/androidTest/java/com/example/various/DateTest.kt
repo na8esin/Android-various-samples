@@ -27,18 +27,23 @@ class DateTest {
     fun zonedDateTimeWithZ() {
         //val context = ApplicationProvider.getApplicationContext<Context>()
         val s = "2022-07-09T08:05:23.653Z"
-        val date = ZonedDateTime.parse(s)
-        assertEquals(date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), "2022-07-09T08:05:23.653")
+        val zdt = ZonedDateTime.parse(s)
+        assertEquals(zdt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), "2022-07-09T08:05:23.653")
     }
 
     @Test
     fun zonedDateTime() {
         val s = "2024-03-01T05:01:34.000+09:00"
-        val date = ZonedDateTime.parse(s)
-        Log.d("DateTest", date.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+        // ZonedDateTime#parseはapi26から
+        val zdt = ZonedDateTime.parse(s)
+        Log.d("DateTest", zdt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
 
+        // ZonedDateTimeからDateの変換
+        val date = Date.from(zdt.toInstant())
+
+        // DateからCalendarの変換
         val c = Calendar.getInstance()
-        c.time = Date.from(date.toInstant())
+        c.time = date
         Log.d("DateTest", "c: $c.")
     }
 
