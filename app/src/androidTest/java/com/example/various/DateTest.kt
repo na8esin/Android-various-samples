@@ -56,4 +56,21 @@ class DateTest {
         Log.d("DateTest", "f: $f")
         assert(f == "2015/03/15")
     }
+
+    @Test
+    fun dateAdd() {
+        val now = Date()
+        val c = Calendar.getInstance()
+        c.time = now
+        Log.d(TAG, "${c.time}")
+        c.add(Calendar.DATE, 1)
+        Log.d(TAG, "${c.time}")
+
+        val diff = c.timeInMillis - now.time
+        Log.d(TAG, "diff: $diff") // 約86400000
+    }
+
+    companion object {
+        private const val TAG = "DateTest"
+    }
 }
